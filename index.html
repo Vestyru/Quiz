@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/style.css" />
+		<script src="/js/setting.js" async></script>
+		<script src="/js/main.js" async></script>
+		<title>Тест контроль</title>
+	</head>
+	<body>
+		<div class="quiz">
+			<div class="quiz__container">
+				<!-- СТАРТОВЫЙ ЭКРАН -->
+				<section class="start-screen" id="start-screen">
+					<div class="start-screen__content">
+						<h1 class="start-screen__title">Тест Контроль</h1>
+						<p class="start-screen__description">
+							Вашему вниманию предоставляется тестирование для оценки ваших личностных качеств. Результаты помогут нам улучшить условия вашей работы. Ответьте, пожалуйста, максимально честно на все утверждения.
+							<b class="start-screen__important">Здесь нет "правильных" или "неправильных" ответов, если затрудняетесь в выборе ответа, выберете то, что наиболее подходит к вам.</b>
+							Всего будет 187 вопросов, подготовьтесь заранее, и выделите необходимое время (40-50 минут).
+						</p>
+
+						<form class="start-form" id="startForm">
+							<div class="start-form__message" id="validation-message">Пожалуйста, заполните все поля.</div>
+
+							<label class="start-form__label" for="callsign">Ваш позывной</label>
+							<input class="start-form__input" type="text" id="callsign" placeholder="" />
+
+							<label class="start-form__label" for="squad">Отряд</label>
+							<input class="start-form__input" type="text" id="squad" placeholder="" />
+
+							<button class="start-form__submit" type="button" onclick="submitStart()">Начать тест</button>
+						</form>
+					</div>
+				</section>
+
+				<!-- ЭКРАН ВОПРОСОВ (СКРЫТ) -->
+				<section class="question-screen hidden" id="quiz-screen">
+					<div class="question-screen__answers">
+						<div class="question-screen__header">
+							<div class="question-screen__counter" id="question-counter">Вопрос 1 из 187</div>
+							<div class="progress-bar">
+								<div class="progress-bar__fill" id="progress-fill"></div>
+							</div>
+						</div>
+						<div class="answers__container" id="answers-container">
+							<!-- вопросы генерируются здесь -->
+						</div>
+					</div>
+				</section>
+				~
+				<!-- ФИНАЛЬНЫЙ ЭКРАН (СКРЫТ) -->
+				<section class="final-screen hidden" id="final-screen">
+					<div class="final-screen__content">
+						<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle" style="border: 3px solid #10b981; padding: 18px; border-radius: 50%; stroke: #10b981">
+							<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+							<polyline points="22 4 12 14.01 9 11.01"></polyline>
+						</svg>
+						<h2 class="final-screen__title">Тестирование завершено</h2>
+						<p class="final-screen__description">Нажмите кнопку, чтобы отправить результаты теста</p>
+
+						<button class="final-screen__submit" id="submit-button">Отправить</button>
+					</div>
+				</section>
+			</div>
+		</div>
+	</body>
+</html>
