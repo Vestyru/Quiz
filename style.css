@@ -21,7 +21,7 @@ body {
 	color: var(--text);
 	display: flex;
 	justify-content: center;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 /* --- Typography Defaults --- */
